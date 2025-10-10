@@ -132,8 +132,49 @@
 		<div class="container">
 			<div class="jumbotron">
 				<h1>Projekt 1</h1>
-
 				<p>Miejsce na projekt laboratoryjny</p>
+				<section id="projekt1">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Zadanie 1 - Operacje na tablicach</h1>
+            
+            <div id="wyniki" style="margin-top: 20px;">
+                <h3>Wyniki w konsoli przeglądarki (F12):</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    let tablica = ['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek'];
+    console.log('1. Początkowa tablica:', tablica);
+    
+    alert(tablica[2]); 
+    
+    tablica[tablica.length - 1] = 'Nowa wartość';
+    
+    alert(tablica[tablica.length - 1]);
+    
+    tablica[5] = 'nowy6';
+    console.log('Po dodaniu tablica[5]:', tablica);
+    
+    tablica[tablica.length] = 'nowy7';
+    console.log('Po dodaniu tablica[length]:', tablica);
+    
+    let nowaLiczba = tablica.push('nowy8', 'nowy9', 'nowy10', 'nowy11');
+    console.log('Po push() - zwraca', nowaLiczba, 'elementów:', tablica);
+    
+    
+    let nowaLiczba2 = tablica.unshift('nowy12', 'nowy13');
+    console.log('Po unshift() - zwraca', nowaLiczba2, 'elementów:', tablica);
+    
+    let usunietyKoniec = tablica.pop();
+    console.log('Po pop() - usunięto:', usunietyKoniec, '| Tablica:', tablica);
+    
+    let usunietyPoczatek = tablica.shift();
+    console.log('Po shift() - usunięto:', usunietyPoczatek, '| Tablica końcowa:', tablica);
+</script>
 
 			</div>
 		</div>
