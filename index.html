@@ -137,19 +137,19 @@
 				<p>Zadanie 1 - Dodawanie i usuwanie elementów z tablicy</p>
 				
 				<script>
-					
-					const tablica = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek'];
+
+					const tablica = [' Poniedziałek ', ' Wtorek ', ' Środa ', ' Czwartek ', ' Piątek '];
 					let wynik = '';
 					
-					wynik += 'Trzeci element tablicy: ' + tablica[2] + '\n\n';
+					wynik += ' Trzeci element tablicy: ' + tablica[2] + '\n\n';
 					
-					tablica[tablica.length-1] = 'Nowa wartość - Weekend';
+					tablica[tablica.length-1] = ' Nowa wartość - Weekend ';
 					wynik += 'Ostatni element po modyfikacji: ' + tablica[tablica.length-1] + '\n\n';
 					
-					tablica[5] = 'nowy6';
-					tablica[tablica.length] = 'nowy7';
-					tablica.push('nowy8', 'nowy9', 'nowy10', 'nowy11');
-					tablica.unshift('nowy12', 'nowy13');
+					tablica[5] = ' nowy6 ';
+					tablica[tablica.length] = ' nowy7 ';
+					tablica.push(' nowy8 ', ' nowy9 ', ' nowy10 ', ' nowy11 ');
+					tablica.unshift(' nowy12 ', ' nowy13 ');
 					
 					wynik += 'Tablica po dodaniu elementów:\n' + tablica + '\n';
 					wynik += 'Liczba elementów: ' + tablica.length + '\n\n';
@@ -160,10 +160,53 @@
 					let removedFirst = tablica.shift();
 					wynik += 'Usunięty element z początku: ' + removedFirst + '\n\n';
 					
-					wynik += 'Tablica po usunięciu elementów:\n' + tablica + '\n';
+					wynik += 'Tablica po usunięciu elementów: \n' + tablica + '\n';
 					wynik += 'Końcowa liczba elementów: ' + tablica.length;
 					
 					alert(wynik);
+				</script>
+				
+				<p>Zadanie 2</p>
+				
+				<script>
+					// Utworzenie drugiej tablicy z przykładowymi danymi
+					const nowaTablica = ['Jabłko', 'Gruszka', 'Banan', 'Pomarańcza', 'Truskawka'];
+					
+					// Wyświetlenie pierwszego elementu
+					document.write('<p>Pierwszy element to <strong>');
+					document.write(nowaTablica[0] + '</strong></p>');
+					
+					// Wyświetlenie ostatniego elementu
+					document.write('<p>Ostatni element to <strong>');
+					document.write(nowaTablica[nowaTablica.length-1] + '</strong></p>');
+					
+					// Dodanie elementu na początek za pomocą unshift()
+					nowaTablica.unshift('Arbuz');
+					
+					// Ponowne wyświetlenie pierwszego elementu (po dodaniu)
+					document.write('<p>Pierwszy element po dodaniu to <strong>');
+					document.write(nowaTablica[0] + '</strong></p>');
+				</script>
+				
+				<p>Zadanie 3</p>
+				
+				<div id="wynik-zadanie3"></div>
+				
+				<script>
+					
+					const iloscAkapitow = document.getElementsByTagName('p').length;
+					
+					const iloscLinkow = document.getElementsByTagName('a').length;
+					
+					const iloscSekcji = document.getElementsByTagName('section').length;
+					
+					let komunikat = '<h3>Statystyki strony:</h3>';
+					komunikat += '<p>Liczba akapitów &lt;p&gt; na całej stronie: <strong>' + iloscAkapitow + '</strong></p>';
+					komunikat += '<p>Liczba linków &lt;a&gt; na stronie: <strong>' + iloscLinkow + '</strong></p>';
+					komunikat += '<p>Liczba sekcji &lt;section&gt;: <strong>' + iloscSekcji + '</strong></p>';
+					
+					document.getElementById('wynik-zadanie3').innerHTML = komunikat;
+					
 				</script>
 
 			</div>
@@ -175,45 +218,15 @@
 		<div class="container">
 			<div class="jumbotron">
 				<h1>Projekt 2</h1>
-				
 				<p>Miejsce na projekt laboratoryjny</p>
+				<p>Zadanie 2 </p>
+
+
 				
 			</div>
 		</div>
 
-	</section>
-		<section id="projekt3">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Projekt 3</h1>
-				
-				<p>Miejsce na projekt laboratoryjny</p>
-				
-			</div>
-		</div>
-	</section>
 
-		<section id="projekt4">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Projekt 4</h1>
-
-				<p>Miejsce na projekt laboratoryjny</p>
-				
-			</div>
-		</div>
-	</section>
-
-		<section id="projekt5">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>Projekt 5</h1>
-
-				<p>Miejsce na projekt laboratoryjny</p>
-				
-			</div>
-		</div>
-	</section>
 	<footer>
 		<div class="container" style="margin-top: 5%">
 			<button type="button" class="btn btn-link" data-toggle="modal"
