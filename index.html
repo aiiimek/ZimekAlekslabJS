@@ -134,6 +134,37 @@
 				<h1>Projekt 1</h1>
 
 				<p>Miejsce na projekt laboratoryjny</p>
+				<p>Zadanie 1 - Dodawanie i usuwanie elementów z tablicy</p>
+				
+				<script>
+					
+					const tablica = ['Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek'];
+					let wynik = '';
+					
+					wynik += 'Trzeci element tablicy: ' + tablica[2] + '\n\n';
+					
+					tablica[tablica.length-1] = 'Nowa wartość - Weekend';
+					wynik += 'Ostatni element po modyfikacji: ' + tablica[tablica.length-1] + '\n\n';
+					
+					tablica[5] = 'nowy6';
+					tablica[tablica.length] = 'nowy7';
+					tablica.push('nowy8', 'nowy9', 'nowy10', 'nowy11');
+					tablica.unshift('nowy12', 'nowy13');
+					
+					wynik += 'Tablica po dodaniu elementów:\n' + tablica + '\n';
+					wynik += 'Liczba elementów: ' + tablica.length + '\n\n';
+					
+					let removedItem = tablica.pop();
+					wynik += 'Usunięty element z końca: ' + removedItem + '\n';
+					
+					let removedFirst = tablica.shift();
+					wynik += 'Usunięty element z początku: ' + removedFirst + '\n\n';
+					
+					wynik += 'Tablica po usunięciu elementów:\n' + tablica + '\n';
+					wynik += 'Końcowa liczba elementów: ' + tablica.length;
+					
+					alert(wynik);
+				</script>
 
 			</div>
 		</div>
@@ -149,8 +180,40 @@
 				
 			</div>
 		</div>
+
+	</section>
+		<section id="projekt3">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 3</h1>
+				
+				<p>Miejsce na projekt laboratoryjny</p>
+				
+			</div>
+		</div>
 	</section>
 
+		<section id="projekt4">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 4</h1>
+
+				<p>Miejsce na projekt laboratoryjny</p>
+				
+			</div>
+		</div>
+	</section>
+
+		<section id="projekt5">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 5</h1>
+
+				<p>Miejsce na projekt laboratoryjny</p>
+				
+			</div>
+		</div>
+	</section>
 	<footer>
 		<div class="container" style="margin-top: 5%">
 			<button type="button" class="btn btn-link" data-toggle="modal"
