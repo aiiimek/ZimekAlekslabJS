@@ -86,7 +86,7 @@
 						<p>nazwisko:</p>
 					</div>
 					<div class="col-md-4">
-						<p>Zimek</p>
+						<p id="nazwisko">Zimek</p>
 					</div>
 				</div>
 				<div class="row">
@@ -94,7 +94,7 @@
 						<p>imię:</p>
 					</div>
 					<div class="col-md-4">
-						<p>Aleks</p>
+						<p id="imie">Aleks</p>
 					</div>
 				</div>
 				<div class="row">
@@ -102,7 +102,7 @@
 						<p>grupa:</p>
 					</div>
 					<div class="col-md-4">
-						<p>1</p>
+						<p id="grupa">1</p>
 					</div>
 				</div>
 				<div class="row">
@@ -110,7 +110,7 @@
 						<p>email:</p>
 					</div>
 					<div class="col-md-4">
-						<p>21207@student.ans-elblag.pl</p>
+						<p id="email">21207@student.ans-elblag.pl</p>
 					</div>
 				</div>
 				<div class="row">
@@ -118,7 +118,26 @@
 						<p>nr indeksu:</p>
 					</div>
 					<div class="col-md-4">
-						<p>21207</p>
+						<p id="indeks">21207</p>
+					</div>
+				</div>
+			
+				<div class="row">
+					<div class="col-md-12">
+						<p id="akapit1"></p>
+						<p id="akapit2"></p>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Elementy z tablicy (while):</h3>
+						<div id="wynik-while"></div>
+						
+						<h3>Elementy z tablicy (for):</h3>
+						<div id="wynik-for"></div>
+					
+						<button onclick="pokazDane()" class="btn btn-primary">Pokaż moje dane</button>
 					</div>
 				</div>
 
@@ -169,21 +188,16 @@
 				<p>Zadanie 2</p>
 				
 				<script>
-					// Utworzenie drugiej tablicy z przykładowymi danymi
 					const nowaTablica = ['Jabłko', 'Gruszka', 'Banan', 'Pomarańcza', 'Truskawka'];
 					
-					// Wyświetlenie pierwszego elementu
 					document.write('<p>Pierwszy element to <strong>');
 					document.write(nowaTablica[0] + '</strong></p>');
-					
-					// Wyświetlenie ostatniego elementu
+					u
 					document.write('<p>Ostatni element to <strong>');
 					document.write(nowaTablica[nowaTablica.length-1] + '</strong></p>');
 					
-					// Dodanie elementu na początek za pomocą unshift()
 					nowaTablica.unshift('Arbuz');
 					
-					// Ponowne wyświetlenie pierwszego elementu (po dodaniu)
 					document.write('<p>Pierwszy element po dodaniu to <strong>');
 					document.write(nowaTablica[0] + '</strong></p>');
 				</script>
@@ -208,6 +222,53 @@
 					document.getElementById('wynik-zadanie3').innerHTML = komunikat;
 					
 				</script>
+				
+				<p>Zadanie 4</p>
+				
+				<script>
+				
+					document.getElementById('nazwisko').innerHTML = 'Zimek';
+					document.getElementById('imie').innerHTML = 'Aleks';
+					document.getElementById('grupa').innerHTML = '1';
+					document.getElementById('email').innerHTML = '21207@student.ans-elblag.pl';
+					document.getElementById('indeks').innerHTML = '21207';
+					
+					document.getElementById('akapit1').innerHTML = 'Element z tablicy dni: <strong>' + tablica[2] + '</strong>';
+					document.getElementById('akapit2').innerHTML = 'Element z tablicy owoców: <strong>' + nowaTablica[1] + '</strong>';
+					
+					let i = 0;
+					let wynikWhile = '<p>';
+					while (i < Math.floor(nowaTablica.length / 2)) {
+						wynikWhile += nowaTablica[i] + '<br>';
+						i++;
+					}
+					wynikWhile += '</p>';
+					document.getElementById('wynik-while').innerHTML = wynikWhile;
+					
+					let wynikFor = '<p>';
+					for (let j = 0; j < Math.floor(nowaTablica.length / 2); j++) {
+						wynikFor += nowaTablica[j] + '<br>';
+					}
+					wynikFor += '</p>';
+					document.getElementById('wynik-for').innerHTML = wynikFor;
+					
+					function pokazDane() {
+						let nazwisko = document.getElementById('nazwisko').innerHTML;
+						let imie = document.getElementById('imie').innerHTML;
+						let grupa = document.getElementById('grupa').innerHTML;
+						let email = document.getElementById('email').innerHTML;
+						let indeks = document.getElementById('indeks').innerHTML;
+						
+						let dane = 'Moje dane:\n\n';
+						dane += 'Nazwisko: ' + nazwisko + '\n';
+						dane += 'Imię: ' + imie + '\n';
+						dane += 'Grupa: ' + grupa + '\n';
+						dane += 'Email: ' + email + '\n';
+						dane += 'Nr indeksu: ' + indeks;
+						
+						alert(dane);
+					}
+				</script>
 
 			</div>
 		</div>
@@ -219,12 +280,76 @@
 			<div class="jumbotron">
 				<h1>Projekt 2</h1>
 				<p>Miejsce na projekt laboratoryjny</p>
-				<p>Zadanie 2 </p>
-
-
+				<p>Zadanie 5 - Quiz</p>
 				
+				<div id="quiz-container">
+					<h3 id="pytanie"></h3>
+					<input type="text" id="odpowiedz" class="form-control" style="max-width: 200px;">
+					<br>
+					<button id="sprawdz-btn" class="btn btn-primary">Sprawdź odpowiedź</button>
+				</div>
+				
+				<div id="wynik-quiz"></div>
+				
+				<script>
+					const questions = [
+						['Ile księżyców ma Ziemia?', 1],
+						['Ile księżyców ma Saturn?', 62],
+						['Ile księżyców ma Wenus?', 0],
+						['Ile planet jest w Układzie Słonecznym?', 8],
+						['Ile wynosi prędkość światła (w tys. km/s)?', 300]
+					];
+					
+					let currentQuestion = 0;
+					let score = 0;
+					
+					function pokazPytanie() {
+						if (currentQuestion < questions.length) {
+							document.getElementById('pytanie').innerHTML = 'Pytanie ' + (currentQuestion + 1) + ': ' + questions[currentQuestion][0];
+							document.getElementById('odpowiedz').value = '';
+						} else {
+							zakonczQuiz();
+						}
+					}
+					
+					function sprawdzOdpowiedz() {
+						let answer = document.getElementById('odpowiedz').value;
+						let question = questions[currentQuestion];
+						
+						if (answer == question[1]) {
+							alert('Prawidłowa odpowiedź!');
+							score++;
+						} else {
+							alert('Błąd. Prawidłowa odpowiedź to ' + question[1]);
+						}
+						
+						currentQuestion++;
+						pokazPytanie();
+					}
+					
+					function zakonczQuiz() {
+						document.getElementById('quiz-container').style.display = 'none';
+						let procent = Math.round((score / questions.length) * 100);
+						document.getElementById('wynik-quiz').innerHTML = 
+							'<h2>Quiz zakończony!</h2>' +
+							'<p>Twój wynik: <strong>' + score + ' / ' + questions.length + '</strong></p>' +
+							'<p>Uzyskano: <strong>' + procent + '%</strong></p>';
+					}
+					
+					document.getElementById('sprawdz-btn').addEventListener('click', sprawdzOdpowiedz);
+					
+					document.getElementById('odpowiedz').addEventListener('keypress', function(e) {
+						if (e.key === 'Enter') {
+							sprawdzOdpowiedz();
+						}
+					});
+					
+					pokazPytanie();
+				</script>
+
 			</div>
 		</div>
+	</section>
 
 
 	<footer>
