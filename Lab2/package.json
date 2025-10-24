@@ -1,0 +1,24 @@
+{
+  "name": "zimekalekslabjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aiiimek/ZimekAlekslabJS.git"
+  },
+  "author": "Aleks Zimek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aiiimek/ZimekAlekslabJS/issues"
+  },
+  "homepage": "https://github.com/aiiimek/ZimekAlekslabJS#readme",
+  "description": "",
+  "dependencies": {
+    "color-parse": "^2.0.2",
+    "is-string-blank": "^1.0.1",
+    "strip-ansi": "^7.1.2"
+  }
+}
