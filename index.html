@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Programowanie w JAVASCRIPT - template">
+<meta name="author" content="dr inż. Jacek Paluszak">
+<link rel="icon" href="img/favicon.ico">
+
+<title>Programowanie w JAVASCRIPT</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<link href="css/navbar-fixed-top.css" rel="stylesheet">
+<script src="js/ie-emulation-modes-warning.js"></script>
+
+<!-- jQuery  -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"></script>
+<script src="js/jquery.easing.1.3.min.js"></script>
+<script src="js/jquery.easing.compatibility.js"></script>
+
+
+</head>
+
+<body>
+
+	<!-- navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"><img src="img/logo512x128.png"
+					height="40" alt=""></a> <a class="navbar-brand logotext" href="#">Laboratorium</a>
+			</div>
+
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#main-page"
+						class="btn btn-primary" title="Strona główna"> <span
+							class="glyphicon glyphicon-home"></span>
+					</a></li>
+					<li><a href="#projekt1">Projekt 1</a></li>
+					<li><a href="#projekt2">Projekt 2</a></li>
+					<li><a href="#form" data-toggle="modal"
+						data-target="#ModalForm">Kontakt</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Opcje <span class="caret"></span>
+					</a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Akcja 1</a></li>
+							<li><a href="#">Akcja 2</a></li>
+							<li><a href="#">Akcja 3</a></li>
+							<li role="separator" class="divider"></li>
+							<li class="dropdown-header">Linki</li>
+							<li><a href="#">Link 1</a></li>
+							<li><a href="#">Link 2</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+
+	</nav>
+
+	<!-- Main container -->
+	<section id="main-page">
+		<div class="container">
+
+			<div class="jumbotron">
+				<h1>Języki wysokiego poziomu <br> w aplikacjach internetowych</h1>
+				<div class="row">
+					<div class="col-md-2" align="left">
+						<p>nazwisko:</p>
+					</div>
+					<div class="col-md-4">
+						<p id="nazwisko">Zimek</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2" align="left">
+						<p>imię:</p>
+					</div>
+					<div class="col-md-4">
+						<p id="imie">Aleks</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2" align="left">
+						<p>grupa:</p>
+					</div>
+					<div class="col-md-4">
+						<p id="grupa">1</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2" align="left">
+						<p>email:</p>
+					</div>
+					<div class="col-md-4">
+						<p id="email">21207@student.ans-elblag.pl</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2" align="left">
+						<p>nr indeksu:</p>
+					</div>
+					<div class="col-md-4">
+						<p id="indeks">21207</p>
+					</div>
+				</div>
+			
+				<div class="row">
+					<div class="col-md-12">
+						<p id="akapit1"></p>
+						<p id="akapit2"></p>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Elementy z tablicy (while):</h3>
+						<div id="wynik-while"></div>
+						
+						<h3>Elementy z tablicy (for):</h3>
+						<div id="wynik-for"></div>
+					
+						<button onclick="pokazDane()" class="btn btn-primary">Pokaż moje dane</button>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!-- /container -->
+
+	<section id="projekt1">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 1</h1>
+
+				<p>Miejsce na projekt laboratoryjny</p>
+				<p>Zadanie 1 - Dodawanie i usuwanie elementów z tablicy</p>
+				
+				<script>
+
+					const tablica = [' Poniedziałek ', ' Wtorek ', ' Środa ', ' Czwartek ', ' Piątek '];
+					let wynik = '';
+					
+					wynik += ' Trzeci element tablicy: ' + tablica[2] + '\n\n';
+					
+					tablica[tablica.length-1] = ' Nowa wartość - Weekend ';
+					wynik += 'Ostatni element po modyfikacji: ' + tablica[tablica.length-1] + '\n\n';
+					
+					tablica[5] = ' nowy6 ';
+					tablica[tablica.length] = ' nowy7 ';
+					tablica.push(' nowy8 ', ' nowy9 ', ' nowy10 ', ' nowy11 ');
+					tablica.unshift(' nowy12 ', ' nowy13 ');
+					
+					wynik += 'Tablica po dodaniu elementów:\n' + tablica + '\n';
+					wynik += 'Liczba elementów: ' + tablica.length + '\n\n';
+					
+					let removedItem = tablica.pop();
+					wynik += 'Usunięty element z końca: ' + removedItem + '\n';
+					
+					let removedFirst = tablica.shift();
+					wynik += 'Usunięty element z początku: ' + removedFirst + '\n\n';
+					
+					wynik += 'Tablica po usunięciu elementów: \n' + tablica + '\n';
+					wynik += 'Końcowa liczba elementów: ' + tablica.length;
+					
+					alert(wynik);
+				</script>
+				
+				<p>Zadanie 2</p>
+				
+				<script>
+					const nowaTablica = ['Jabłko', 'Gruszka', 'Banan', 'Pomarańcza', 'Truskawka'];
+					
+					document.write('<p>Pierwszy element to <strong>');
+					document.write(nowaTablica[0] + '</strong></p>');
+					u
+					document.write('<p>Ostatni element to <strong>');
+					document.write(nowaTablica[nowaTablica.length-1] + '</strong></p>');
+					
+					nowaTablica.unshift('Arbuz');
+					
+					document.write('<p>Pierwszy element po dodaniu to <strong>');
+					document.write(nowaTablica[0] + '</strong></p>');
+				</script>
+				
+				<p>Zadanie 3</p>
+				
+				<div id="wynik-zadanie3"></div>
+				
+				<script>
+					
+					const iloscAkapitow = document.getElementsByTagName('p').length;
+					
+					const iloscLinkow = document.getElementsByTagName('a').length;
+					
+					const iloscSekcji = document.getElementsByTagName('section').length;
+					
+					let komunikat = '<h3>Statystyki strony:</h3>';
+					komunikat += '<p>Liczba akapitów &lt;p&gt; na całej stronie: <strong>' + iloscAkapitow + '</strong></p>';
+					komunikat += '<p>Liczba linków &lt;a&gt; na stronie: <strong>' + iloscLinkow + '</strong></p>';
+					komunikat += '<p>Liczba sekcji &lt;section&gt;: <strong>' + iloscSekcji + '</strong></p>';
+					
+					document.getElementById('wynik-zadanie3').innerHTML = komunikat;
+					
+				</script>
+				
+				<p>Zadanie 4</p>
+				
+				<script>
+				
+					document.getElementById('nazwisko').innerHTML = 'Zimek';
+					document.getElementById('imie').innerHTML = 'Aleks';
+					document.getElementById('grupa').innerHTML = '1';
+					document.getElementById('email').innerHTML = '21207@student.ans-elblag.pl';
+					document.getElementById('indeks').innerHTML = '21207';
+					
+					document.getElementById('akapit1').innerHTML = 'Element z tablicy dni: <strong>' + tablica[2] + '</strong>';
+					document.getElementById('akapit2').innerHTML = 'Element z tablicy owoców: <strong>' + nowaTablica[1] + '</strong>';
+					
+					let i = 0;
+					let wynikWhile = '<p>';
+					while (i < Math.floor(nowaTablica.length / 2)) {
+						wynikWhile += nowaTablica[i] + '<br>';
+						i++;
+					}
+					wynikWhile += '</p>';
+					document.getElementById('wynik-while').innerHTML = wynikWhile;
+					
+					let wynikFor = '<p>';
+					for (let j = 0; j < Math.floor(nowaTablica.length / 2); j++) {
+						wynikFor += nowaTablica[j] + '<br>';
+					}
+					wynikFor += '</p>';
+					document.getElementById('wynik-for').innerHTML = wynikFor;
+					
+					function pokazDane() {
+						let nazwisko = document.getElementById('nazwisko').innerHTML;
+						let imie = document.getElementById('imie').innerHTML;
+						let grupa = document.getElementById('grupa').innerHTML;
+						let email = document.getElementById('email').innerHTML;
+						let indeks = document.getElementById('indeks').innerHTML;
+						
+						let dane = 'Moje dane:\n\n';
+						dane += 'Nazwisko: ' + nazwisko + '\n';
+						dane += 'Imię: ' + imie + '\n';
+						dane += 'Grupa: ' + grupa + '\n';
+						dane += 'Email: ' + email + '\n';
+						dane += 'Nr indeksu: ' + indeks;
+						
+						alert(dane);
+					}
+				</script>
+
+			</div>
+		</div>
+	</section>
+
+
+	<section id="projekt2">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Projekt 2</h1>
+				<p>Miejsce na projekt laboratoryjny</p>
+				<p>Zadanie 5 - Quiz</p>
+				
+				<div id="quiz-container">
+					<h3 id="pytanie"></h3>
+					<input type="text" id="odpowiedz" class="form-control" style="max-width: 200px;">
+					<br>
+					<button id="sprawdz-btn" class="btn btn-primary">Sprawdź odpowiedź</button>
+				</div>
+				
+				<div id="wynik-quiz"></div>
+				
+				<script>
+					const questions = [
+						['Ile księżyców ma Ziemia?', 1],
+						['Ile księżyców ma Saturn?', 62],
+						['Ile księżyców ma Wenus?', 0],
+						['Ile planet jest w Układzie Słonecznym?', 8],
+						['Ile wynosi prędkość światła (w tys. km/s)?', 300]
+					];
+					
+					let currentQuestion = 0;
+					let score = 0;
+					
+					function pokazPytanie() {
+						if (currentQuestion < questions.length) {
+							document.getElementById('pytanie').innerHTML = 'Pytanie ' + (currentQuestion + 1) + ': ' + questions[currentQuestion][0];
+							document.getElementById('odpowiedz').value = '';
+						} else {
+							zakonczQuiz();
+						}
+					}
+					
+					function sprawdzOdpowiedz() {
+						let answer = document.getElementById('odpowiedz').value;
+						let question = questions[currentQuestion];
+						
+						if (answer == question[1]) {
+							alert('Prawidłowa odpowiedź!');
+							score++;
+						} else {
+							alert('Błąd. Prawidłowa odpowiedź to ' + question[1]);
+						}
+						
+						currentQuestion++;
+						pokazPytanie();
+					}
+					
+					function zakonczQuiz() {
+						document.getElementById('quiz-container').style.display = 'none';
+						let procent = Math.round((score / questions.length) * 100);
+						document.getElementById('wynik-quiz').innerHTML = 
+							'<h2>Quiz zakończony!</h2>' +
+							'<p>Twój wynik: <strong>' + score + ' / ' + questions.length + '</strong></p>' +
+							'<p>Uzyskano: <strong>' + procent + '%</strong></p>';
+					}
+					
+					document.getElementById('sprawdz-btn').addEventListener('click', sprawdzOdpowiedz);
+					
+					document.getElementById('odpowiedz').addEventListener('keypress', function(e) {
+						if (e.key === 'Enter') {
+							sprawdzOdpowiedz();
+						}
+					});
+					
+					pokazPytanie();
+				</script>
+
+			</div>
+		</div>
+	</section>
+
+
+	<footer>
+		<div class="container" style="margin-top: 5%">
+			<button type="button" class="btn btn-link" data-toggle="modal"
+				data-target="#myModal">Polityka prywatności</button>
+		</div>
+	</footer>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel1">Polityka prywatności</h4>
+				</div>
+				<div class="modal-body">polityka prywatności...</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default btn-warning btn-sm"
+						data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="ModalForm" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel2">Kontakt</h4>
+				</div>
+				<div class="modal-body">
+					<section id="form" style="margin-top: 5%">
+						<form action="index.html#kontakt" method="post"
+							onsubmit="return checkForm();">
+							<fieldset>
+								<div class="row">
+									<div class="col-md-12">
+										<p class="hide" id="errorName">Podanie imienia jest
+											wymagane!</p>
+									</div>
+								</div>
+								<div class="row" id="success">
+									<div class="col-md-2" align="right">
+										<label class="control-label" for="contactName">Imię</label>
+									</div>
+									<div class="col-md-4">
+										<input type="text" class="form-control " id="contactName"
+											aria-describedby="inputSuccess5Status" onblur="checkName()" />
+										<span class="hide" aria-hidden="true" id="true"></span> <span
+											id="inputSuccess5Status" class="sr-only">(success)</span>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-12">
+										<p class="hide" id="errorLastName">Podanie nazwiska jest
+											wymagane!</p>
+									</div>
+								</div>
+								<div class="row" id="success2">
+									<div class="col-md-2" align="right">
+										<label class="control-label" for="contactLastName">Nazwisko</label>
+									</div>
+									<div class="col-md-4">
+										<input type="text" class="form-control " id="contactLastName"
+											aria-describedby="inputSuccess5Status"
+											onblur="checkLastName()" /> <span class="hide"
+											aria-hidden="true" id="true2"></span> <span
+											id="inputSuccess5Status2" class="sr-only">(success)</span>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-12">
+										<p class="hide" id="errorEmail">Podanie emaila jest
+											wymagane!</p>
+										<p class="hide" id="errorEmail2">Błędny email!</p>
+									</div>
+								</div>
+								<div class="row" id="success3">
+									<div class="col-md-2" align="right">
+										<label class="control-label" for="contactEmail">Email</label>
+									</div>
+									<div class="col-md-4">
+										<input type="text" class="form-control " id="contactEmail"
+											aria-describedby="inputSuccess5Status" onblur="checkEmail()" />
+										<span class="hide" aria-hidden="true" id="true3"></span> <span
+											id="inputSuccess5Status3" class="sr-only">(success)</span>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-2" align="right">
+										<label for="information">Informacje</label>
+									</div>
+									<div class="col-md-4">
+										<textarea name="Informacje" cols="30" rows="7" id="Info"
+											maxlength="250"></textarea>
+									</div>
+								</div>
+								<br>
+								<div class="row ">
+									<div class="col-md-2"></div>
+									<div class="col-md-3">
+										<input class="btn btn-primary" type="submit" value="Wyślij" />
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</section>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default btn-warning btn-sm"
+						data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/forms.js"></script>
+	
+</body>
+
+</html>
