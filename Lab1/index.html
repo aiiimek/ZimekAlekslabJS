@@ -8,6 +8,27 @@
 <meta name="description" content="Programowanie w JAVASCRIPT - template">
 <meta name="author" content="dr inż. Jacek Paluszak">
 <link rel="icon" href="img/favicon.ico">
+<style>
+.back-to-main {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    z-index: 9999;
+}
+.back-to-main a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.back-to-main a:hover {
+    background-color: #218838;
+}
+</style>
 
 <title>Programowanie w JAVASCRIPT</title>
 
@@ -28,6 +49,9 @@
 </head>
 
 <body>
+	<div class="back-to-main">
+		<a href="../index.html">← Powrót do strony głównej</a>
+	</div>
 
 	<!-- navbar -->
 	<nav class="navbar navbar-default navbar-fixed-top">
